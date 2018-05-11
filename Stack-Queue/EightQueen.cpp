@@ -27,11 +27,12 @@ void EightQueen(int r)
 		++cnt;
 		return;
 	}
-	
+        //遍历每一列
 	for(int i = 0; i < n; ++i){
-		c[r] = i;
+		c[r] = i;//取第r行，第i列		
 		bool ok = 1;
-		for(int j = 0; j < r;++j){
+		for(int j = 0; j < r;++j){//遍历前r行
+                        //判断第j行与第r行是否冲突
 			if(c[r] == c[j] || r - j == c[r] - c[j] || j - r == c[r] - c[j]){
 				ok = 0;
 				break;
