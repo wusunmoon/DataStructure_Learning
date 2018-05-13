@@ -34,7 +34,9 @@ class BiTree
 		void DelSubTree(T x){DelSubTree(root,x);}
 		void Path(T p){Path(root,p);}
 		bool IsCompleteBiTree(){return IsCompleteBiTree(root);}
-		
+		int CountLeaf(){return CountLeaf(root);}
+		int CountLeafNonrecursion(){return CountLeafNonrecursion(root);}
+
 	private:
 		BiNode<T> * root;
 		BiNode<T> * Creat(BiNode<T> * bt);
@@ -53,7 +55,46 @@ class BiTree
 		void DelSubTree(BiNode<T> * bt, T x);
 		void Path(BiNode<T> * bt, T p); 
 		bool IsCompleteBiTree(BiNode<T> * bt);
+		int CountLeaf(BiNode<T> * bt);
+		int CountLeafNonrecursion(BiNode<T> * bt);
 };
+
+template <class T>
+int BiTree<T>::CountLeafNonrecursion(BiNode<T> * bt)
+{
+	int count = 0;
+	if(bt != NULL){
+		stack<BiNode<T> *> s;
+		s.push(bt);
+		BiNode<T> * p;
+		while(!s.empty()){
+			p = s.top();
+			s.pop();
+			if(p->lchild == NULL && p->rchild == NULL)
+				++count;
+			
+			if(p->rchild != NULL)
+				s.push(p->rchild);
+			if(p->lchild != NULL)
+				s.push(p->lchild);
+			
+		} 
+	}
+	return count;
+}
+template <class T>
+int BiTree<T>::CountLeaf(BiNode<T> * bt)
+{
+	if(bt != NULL){
+		if(bt->lchild == NULL && bt->rchild == NULL)
+			return 1;
+		else{
+			return CountLeaf(bt->lchild) + CountLeaf(bt->rchild);
+		}
+	}
+	else
+		return 0;
+}
 
 template <class T>
 bool BiTree<T>::IsCompleteBiTree(BiNode<T> * bt)
