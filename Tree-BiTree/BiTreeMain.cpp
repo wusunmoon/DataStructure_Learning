@@ -63,7 +63,12 @@ int main()
 	ct.Path(ch);
 	cout << endl;
 	cout << endl;
-	
+
+	cout << "该二叉树中叶子结点的个数：(递归)" << ct.CountLeaf() << endl;
+	cout << endl;
+	cout << "该二叉树中叶子结点的个数：(迭代)" << ct.CountLeafNonrecursion() << endl;
+	cout << endl;
+
 	cin >> ch;
 	cout << "删除" << ch << "子树：";
 	ct.DelSubTree(ch);
@@ -74,3 +79,11 @@ int main()
 	
 	return 0;
 }
+/*
+输入示例：
+AB#D##C##
+树结构：
+		A
+              B   C
+	       D
+*/
