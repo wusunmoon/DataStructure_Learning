@@ -1,0 +1,8 @@
+/usr mark 1
+/usr alex 1
+/usr bak 1
+mark hw.c 3
+mark course 1
+alex hw.c 5
+bak aa.txt 13
+course aa.txt 12
