@@ -1,3 +1,5 @@
+//æ•°å­—æ—‹è½¬æ–¹é˜µæ±‚è§£
+
 #include<iostream>
 
 using namespace std;
@@ -7,7 +9,7 @@ void Full(int **a,int n,int begin=0,int number=1);
 int main()
 {
 	int n;
-	cout << "ÊäÈë½×Êý£º"; 
+	cout << "è¾“å…¥é˜¶æ•°ï¼š"; 
 	while(cin >> n){
 		int **a = new int*[n];
 		for(int i = 0; i < n; ++i)
@@ -21,7 +23,7 @@ int main()
 			}
 			cout << endl;
 		}
-		cout << "ÊäÈë½×Êý£º"; 
+		cout << "è¾“å…¥é˜¶æ•°ï¼š"; 
 	}
 	return 0;
 }
