@@ -23,6 +23,9 @@ int main()
 			}
 			cout << endl;
 		}
+		for(int i = 0; i < n; ++i)
+			delete []a[i];
+
 		cout << "输入阶数："; 
 	}
 	return 0;
