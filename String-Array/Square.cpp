@@ -12,7 +12,7 @@ int main()
 	int n;
 	cout << "请输入幻方阶数：";
 	while(cin >> n){
-		//分配n*n个int内存 
+		//分配n个int*内存+n*n个int内存 
 		int **a = new int*[n];
 		for(int i = 0; i < n; ++i){
 			a[i] = new int[n]();
@@ -51,10 +51,11 @@ int main()
 		for(int i = 0; i < n+1; ++i)
 			cout << colSum[i] << " ";
 		cout << endl;
-		//释放n*n个int内存 
+		//释放n*n个int内存+n个int*内存 
 		for(int i = 0; i < n; ++i){
 			delete []a[i]; 
 		} 
+		delete []a;
 		delete []colSum;
 	  cout << "请输入幻方阶数：";
 	}
