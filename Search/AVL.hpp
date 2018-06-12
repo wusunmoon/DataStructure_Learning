@@ -60,7 +60,7 @@ void AVLTree<T>::Release(BSTNode<T> * bst)
 /*
 	函数：插入x
 	参数：bst：树的根指针，进行调整的时候会修改其值，故用引用    x：要插入的值
-	返回值：空 
+	返回值：是否成功插入
 */ 
 template <class T>
 bool AVLTree<T>::Insert(BSTNode<T> * &bst, const T &x)
@@ -107,7 +107,7 @@ bool AVLTree<T>::Insert(BSTNode<T> * &bst, const T &x)
 /*
 	函数：删除值为x的节点
 	参数：bst：树根指针，进行调整的时候会修改其值，故用引用    x：要删除的值
-	返回值：空 
+	返回值：是否成功删除
 */ 
 template <class T>
 bool AVLTree<T>::Delete(BSTNode<T> * &bst, const T &x)
@@ -248,7 +248,7 @@ BSTNode<T> * AVLTree<T>::Search(BSTNode<T> * bst, T &x)
 /*
 	函数：修改节点值
 	参数：x：把节点id==x.id 的节点值修改为x 
-	返回值：空 
+	返回值：是否成功修改
 */
 template <class T>
 bool AVLTree<T>::Modify(const T &x)
