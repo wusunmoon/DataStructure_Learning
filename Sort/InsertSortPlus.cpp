@@ -50,6 +50,7 @@ void OutPut(const vector<int> &v)
 /*
 	函数：基于折半查找寻找插入位置的直接插入排序
 	参数：v:待排数组 
+	Bug修复：当为特殊情况a m b且t<v[m]时，应插在a之后
 */
 void InsertSortPlus(vector<int> &v)
 {
@@ -65,7 +66,7 @@ void InsertSortPlus(vector<int> &v)
 			else
 				a = m + 1;
 		}
-		if(v[a] < t)
+		if(v[a] < t)//特殊情况
 			++a;
 		for(int j = i - 1; j >= a; --j)
 			v[j+1] = v[j];
