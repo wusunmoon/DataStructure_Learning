@@ -37,6 +37,7 @@ int main()
 /*
 	函数：初始化随机数链表 
 	参数：first：链表首指针 	n：初始化大小 
+	Bug修复：first要使用引用类型 
 */ 
 void InitRandomArr(Node * &first, int n)
 {
