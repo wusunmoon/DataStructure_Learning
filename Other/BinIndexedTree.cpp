@@ -40,7 +40,8 @@ BIT::BIT(vector<int> list)
 	++size;
 	for(int i = 1; i < size; ++i){
 		int j = i + (i & -i);
-		vt[j] += vt[i]; 
+		if(j < size)
+			vt[j] += vt[i]; 
 	}
 }
 int BIT::Query(int idx)
