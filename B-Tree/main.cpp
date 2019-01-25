@@ -1,6 +1,7 @@
 #include<iostream>
 #include<random>
 #include<ctime>
+#include<thread>
 
 #include"btree.h"
 
@@ -9,6 +10,7 @@ using namespace std;
 int dice(int range)
 {
 	uniform_int_distribution<unsigned> u(0, range);
+	this_thread::sleep_for(1s);
 	default_random_engine e((unsigned)time(0));
 	return u(e);
 }
